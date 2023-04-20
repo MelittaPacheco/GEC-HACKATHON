@@ -10,6 +10,7 @@ router.get("/", async (req, res) => {
 router.get("/:id", async(req,res)=> {
     await UserController.getUser(req, res);
 });
+
 router.post("/", async(req,res)=> {
     await UserController.addUser(req, res);
 });

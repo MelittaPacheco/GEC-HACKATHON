@@ -102,16 +102,66 @@ exports.updatePost = async (req, res) => {
 
  //get posts of a particular user
  exports.getUserPosts= async (req, res) => {
-    
+    console.log(req.params.id)
      try {
-         const posts = await Post.find({UserID:req.params.id});
+         const posts = await Post.find({userID:req.params.id});
+        //   const posts = await Post.find();
+
+        console.log(posts)
          res.status(200).send(posts);
         }
         catch (err){
             res.send(err);
         }}   
+        
+ exports.getPostsByTitle= async (req, res) => {
+            console.log(req.body)
+             try {
+                 const posts = await Post.find({content:req.params.content});
+             
+               
+                 res.status(200).send(posts);
+                }
+                catch (err){
+                    res.send(err);
+                }} 
+                
+exports.getPostsByPreferences= async (req, res) => {
+                    console.log(req.body)
+                     try {
+                         const posts = await Post.find({preference:req.params.preference});
+                     
+                       
+                         res.status(200).send(posts);
+                        }
+                        catch (err){
+                            res.send(err);
+                        }} 
+                        
+exports.getPostsBySkill= async (req, res) => {
+                           
+                             try {
+                                 const posts = await Post.find({skill:req.params.skill});
+                             
+                               
+                                 res.status(200).send(posts);
+                                }
+                                catch (err){
+                                    res.send(err);
+                                }}
 
-
+                         
+exports.getPostsByDiet= async (req, res) => {
+    
+     try {
+         const posts = await Post.find({dietRequirement:req.params.diet});
+     
+       
+         res.status(200).send(posts);
+        }
+        catch (err){
+            res.send(err);
+        }}                               
 exports.updateUpVote = async (req, res) => {
    
      try {

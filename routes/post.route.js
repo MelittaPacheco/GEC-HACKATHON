@@ -10,6 +10,18 @@ router.get("/", async (req, res) => {
 router.get("/:id", async(req,res)=> {
     await PostController.getPost(req, res);
 });
+router.get("/content/:content", async(req,res)=> {
+    await PostController.getPostsByTitle(req, res);
+});
+router.get("/preference/:preference", async(req,res)=> {
+    await PostController.getPostsByPreferences(req, res);
+});
+router.get("/skill/:skill", async(req,res)=> {
+    await PostController.getPostsBySkill(req, res);
+});
+router.get("/diet/:diet", async(req,res)=> {
+    await PostController.getPostsByDiet(req, res);
+});
 router.get("/user/:id", async(req,res)=> {
     await PostController.getUserPosts(req, res);
 });
