@@ -13,7 +13,8 @@ exports.addPost = async (req, res) => {
             skill:req.body.skill,
             dietRequirement:req.body.dietRequirement,
             // comment:req.body.comment,
-            userID:req.body.userID
+            userID:req.body.userID,
+            userName:req.body.userName
         });
         
         await post.save();

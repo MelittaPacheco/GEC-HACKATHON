@@ -4,10 +4,10 @@ exports.addSubscriber = async (req, res) => {
     try {
         console.log(req.body)
             const subscriber= new Subscriber({
-                postID:req.body.postID,
+                trainerID:req.body.trainerID,
                 userID: req.body.userID,
                 userName:req.body.userName,
-                message:req.body.message
+                userImage:req.body.userImage
             
         });
         
@@ -16,7 +16,7 @@ exports.addSubscriber = async (req, res) => {
       } catch (err) {
         res.send(err);
       }
-
+  
 }
 
 
@@ -51,8 +51,7 @@ exports.getSubscriber = async (req, res) => {
     console.log(req.params.id)
      try {
          const subscriber= await Subscriber.find({trainerID:req.params.id});
-      
-
+    
         console.log(subscriber)
          res.status(200).send(subscriber);
         }

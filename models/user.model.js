@@ -31,13 +31,7 @@ const userSchema = new Schema({
         type: String,
         default: "user"
     },
-    // chat:[
-    //     {
-    //         userID: {type:mongoose.Schema.Types.ObjectId},
-    //         userName:{type: String},
-    //         message:{type:String,}
-    //     }
-    // ],
+  
     gender:{
         type:String,
         default: ""
