@@ -12,9 +12,9 @@ router.get("/", async(req,res)=> {
 router.get("/:id", async(req,res)=> {
     await ChatController.getChat(req, res);
 });
-// router.get("/post/:id", async(req,res)=> {
-//     await ChatController.getPostChat(req, res);
-// });
+router.get("/trainer/:id", async(req,res)=> {
+    await ChatController.getTrainerChat(req, res);
+});
 router.post("/", async(req,res)=> {
     await ChatController.addChat(req, res);
 });

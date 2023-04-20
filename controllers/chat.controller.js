@@ -126,14 +126,14 @@ exports.addChat = async (req, res) => {
       }
 
 }
-exports.getPostChat= async (req, res) => {
+exports.getTrainerChat= async (req, res) => {
     console.log(req.params.id)
      try {
-         const comments = await Comment.find({postID:req.params.id});
+         const chats = await Chat.find({trainerID:req.params.id});
         //   const posts = await Post.find();
 
-        console.log(comments)
-         res.status(200).send(comments);
+        console.log(chats)
+         res.status(200).send(chats);
         }
         catch (err){
             res.send(err);
