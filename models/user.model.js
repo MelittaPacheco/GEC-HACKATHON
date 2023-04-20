@@ -16,16 +16,20 @@ const userSchema = new Schema({
     },
     mobile: {
         type: String, 
+        default: ""
     },
     profileImage:
     {
         type:String,
+        default: ""
     },
     bio: {
-        type: String
+        type: String,
+        default: ""
     },
     userType: {
-        type: String
+        type: String,
+        default: ""
     },
     chat:[
         {
@@ -35,17 +39,22 @@ const userSchema = new Schema({
         }
     ],
     gender:{
-        type:String
+        type:String,
+        default: ""
+
     },
 
     preference:  {
-        type: String
+        type: String,
+        default: ""
     },
     skill:  {
-        type: String
+        type: String,
+        default: ""
     },
     dietRequirement:  {
-        type: String
+        type: String,
+        default: ""
     },
     
 },{timestamps:true});

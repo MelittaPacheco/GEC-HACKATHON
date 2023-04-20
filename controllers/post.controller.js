@@ -118,9 +118,9 @@ exports.updateUpVote = async (req, res) => {
    
      try {
         const prevPost= await Post.findById(req.params.id)
-        let prevUpVote=(prevPost.upVote)
+        let newUpVote=(prevPost.vote)+1
         const post = await Post.findByIdAndUpdate(req.params.id, {
-            upVote:prevUpVote+1
+            upVote:newUpVote
         });
         console.log(post)
          res.status(200).send(post);
@@ -128,3 +128,19 @@ exports.updateUpVote = async (req, res) => {
      catch (err){
          res.send(err);
      }}
+
+
+     exports.updateDownVote = async (req, res) => {
+   
+        try {
+           const prevPost= await Post.findById(req.params.id)
+           let newDownVote=(prevPost.vote)-1
+           const post = await Post.findByIdAndUpdate(req.params.id, {
+               upVote:newDownVote
+           });
+           console.log(post)
+            res.status(200).send(post);
+        }
+        catch (err){
+            res.send(err);
+        }}

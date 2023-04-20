@@ -16,9 +16,7 @@ const postSchema = new Schema({
             message:{type:String,}
         }
     ],
-    upVote:{type:Number},
-    downVote:{type:Number},
-
+    vote:{type:Number},
     preference:  {
         type: String
     },
@@ -28,7 +26,21 @@ const postSchema = new Schema({
     dietRequirement:  {
         type: String
     },
-    
+    stepOne:{
+        type: String
+    },
+    stepTwo:{
+        type: String
+    },
+    stepThree:{
+        type: String
+    },
+    stepFour:{
+        type: String
+    },
+    stepOne:{
+        type: String
+    },
 },{timestamps:true});
 
 module.exports = mongoose.model("post", postSchema);

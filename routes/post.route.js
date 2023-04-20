@@ -24,5 +24,7 @@ router.delete("/:id", async(req,res)=> {
 router.post("/upvote/:id",async(req,res)=>{
     await PostController.updateUpVote(req, res);
 })
-
+router.post("/downvote/:id",async(req,res)=>{
+    await PostController.updateDownVote(req, res);
+})
 module.exports = router;
