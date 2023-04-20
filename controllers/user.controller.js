@@ -22,15 +22,19 @@ exports.addUser = async (req, res) => {
 
 //signin
 exports.login = async (req, res) => {
-    const email = req.body.name;
+    console.log(req.body)
+    const email = req.body.email;
     const password = req.body.password;
-
+    const data = {
+        email: email
+      };
     try {
-        let result = await User.findOne(email)
-        console.log(result)
+        const result = await User.find(data)
+        console.log(result[0].password)
+        console.log(password)
         if (result) {
             //compare passwords       
-            if (result.password===password) {
+            if (result[0].password===password) {
 
                 res.status(200).send(result)
             } else {

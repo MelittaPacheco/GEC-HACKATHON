@@ -12,8 +12,8 @@ exports.addPost = async (req, res) => {
             preference:req.body.preference,
             skill:req.body.skill,
             dietRequirement:req.body.dietRequirement,
-            comment:req.body.comment
-
+            // comment:req.body.comment,
+            userID:req.body.userID
         });
         
         await post.save();
@@ -86,7 +86,7 @@ exports.updatePost = async (req, res) => {
                 preference:req.body.preference,
                 skill:req.body.skill,
                 dietRequirement:req.body.dietRequirement,
-                comment:req.body.comment
+                // comment:req.body.comment
     
               }
         const post = await Post.findByIdAndUpdate(req.params.id, updatePost);

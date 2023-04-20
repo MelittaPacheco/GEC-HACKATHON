@@ -10,6 +10,9 @@ router.get("/", async (req, res) => {
 router.get("/:id", async(req,res)=> {
     await PostController.getPost(req, res);
 });
+router.get("/user/:id", async(req,res)=> {
+    await PostController.getUserPosts(req, res);
+});
 router.post("/",upload.single("postImage"), async(req,res)=> {
     await PostController.addPost(req, res);
 });

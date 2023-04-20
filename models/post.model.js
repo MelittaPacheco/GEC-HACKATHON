@@ -30,6 +30,10 @@ const postSchema = new Schema({
         type: String,
         default: ""
     },
+    ingredients:{
+        type: String,
+        default: ""  
+    },
     stepOne:{
         type: String,
         default: ""
