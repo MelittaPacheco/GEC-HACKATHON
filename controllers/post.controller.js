@@ -8,8 +8,7 @@ exports.addPost = async (req, res) => {
           const post= new Post({
             postImage:result.secure_url,
             content:req.body.content,
-            upVote:req.body. upVote,
-            downVote:req.body.downVote,
+            vote:req.body.vote,
             preference:req.body.preference,
             skill:req.body.skill,
             dietRequirement:req.body.dietRequirement,
@@ -83,8 +82,7 @@ exports.updatePost = async (req, res) => {
               const updatePost={
                 postImage:result.secure_url,
                 content:req.body.content,
-                upVote:req.body. upVote,
-                downVote:req.body.downVote,
+                vote:req.body.vote,
                 preference:req.body.preference,
                 skill:req.body.skill,
                 dietRequirement:req.body.dietRequirement,
@@ -102,28 +100,29 @@ exports.updatePost = async (req, res) => {
         }}
    
 
-//  //get posts of a particular user
-//  exports.getUserPosts= async (req, res) => {
+ //get posts of a particular user
+ exports.getUserPosts= async (req, res) => {
     
-//      try {
-//          const posts = await Post.find({UserID:req.params.id}).populate('UserID', ['first_name','last_name','profile_pic']);
-//          res.status(200).send(posts);
-//         }
-//         catch (err){
-//             res.send(err);
-//         }}   
+     try {
+         const posts = await Post.find({UserID:req.params.id});
+         res.status(200).send(posts);
+        }
+        catch (err){
+            res.send(err);
+        }}   
 
 
 exports.updateUpVote = async (req, res) => {
    
      try {
         const prevPost= await Post.findById(req.params.id)
+        console.log(prevPost.vote)
         let newUpVote=(prevPost.vote)+1
         const post = await Post.findByIdAndUpdate(req.params.id, {
-            upVote:newUpVote
+            vote:newUpVote
         });
-        console.log(post)
-         res.status(200).send(post);
+        const updatePost= await Post.findById(req.params.id)
+         res.status(200).send(updatePost);
      }
      catch (err){
          res.send(err);
@@ -136,10 +135,10 @@ exports.updateUpVote = async (req, res) => {
            const prevPost= await Post.findById(req.params.id)
            let newDownVote=(prevPost.vote)-1
            const post = await Post.findByIdAndUpdate(req.params.id, {
-               upVote:newDownVote
+               vote:newDownVote
            });
-           console.log(post)
-            res.status(200).send(post);
+           const updatePost= await Post.findById(req.params.id)
+           res.status(200).send(updatePost);
         }
         catch (err){
             res.send(err);

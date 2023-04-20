@@ -25,19 +25,19 @@ const userSchema = new Schema({
     },
     bio: {
         type: String,
-        default: ""
+        default: "Hey, I'm new here!!!"
     },
     userType: {
         type: String,
-        default: ""
+        default: "user"
     },
-    chat:[
-        {
-            userID: {type:mongoose.Schema.Types.ObjectId},
-            userName:{type: String},
-            message:{type:String,}
-        }
-    ],
+    // chat:[
+    //     {
+    //         userID: {type:mongoose.Schema.Types.ObjectId},
+    //         userName:{type: String},
+    //         message:{type:String,}
+    //     }
+    // ],
     gender:{
         type:String,
         default: ""

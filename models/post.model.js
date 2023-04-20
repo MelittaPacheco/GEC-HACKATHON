@@ -1,45 +1,54 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const postSchema = new Schema({
+    userID:{type:mongoose.Schema.Types.ObjectId},
     content: {
         type: String,
-    
     },
     postImage:
     {
         type:String,
+        default: ""
     },
-    comment:[
-        {
-            userID: {type:mongoose.Schema.Types.ObjectId},
-            userName:{type: String},
-            message:{type:String,}
-        }
-    ],
+    // comment:[
+    //     {
+    //         userID: {type:mongoose.Schema.Types.ObjectId},
+    //         userName:{type: String},
+    //         message:{type:String,}
+    //     }
+    // ],
     vote:{type:Number},
     preference:  {
-        type: String
+        type: String,
+        default: ""
     },
     skill:  {
-        type: String
+        type: String,
+        default: ""
     },
     dietRequirement:  {
-        type: String
+        type: String,
+        default: ""
     },
     stepOne:{
-        type: String
+        type: String,
+        default: ""
     },
     stepTwo:{
-        type: String
+        type: String,
+        default: ""
     },
     stepThree:{
-        type: String
+        type: String,
+        default: ""
     },
     stepFour:{
-        type: String
+        type: String,
+        default: ""
     },
-    stepOne:{
-        type: String
+    stepFive:{
+        type: String,
+        default: ""
     },
 },{timestamps:true});
 

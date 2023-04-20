@@ -105,7 +105,7 @@ exports.updateUser = async (req, res) => {
                 skill:req.body.skill,
                 dietRequirement:req.body.dietRequirement,
                 gender:req.body.gender,
-                chat:req.body.chat
+                
 
             });
 
