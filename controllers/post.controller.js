@@ -12,6 +12,12 @@ exports.addPost = async (req, res) => {
             preference:req.body.preference,
             skill:req.body.skill,
             dietRequirement:req.body.dietRequirement,
+            ingredients:req.body.ingredients,
+            stepOne:req.body.stepOne,
+            stepTwo:req.body.stepTwo,
+            stepThree:req.body.stepThree,
+            stepFour:req.body.stepFour,
+            stepFive:req.body.stepFive,
             // comment:req.body.comment,
             userID:req.body.userID,
             userName:req.body.userName
@@ -87,6 +93,12 @@ exports.updatePost = async (req, res) => {
                 preference:req.body.preference,
                 skill:req.body.skill,
                 dietRequirement:req.body.dietRequirement,
+                ingredients:req.body.ingredients,
+            stepOne:req.body.stepOne,
+            stepTwo:req.body.stepTwo,
+            stepThree:req.body.stepThree,
+            stepFour:req.body.stepFour,
+            stepFive:req.body.stepFive,
                 // comment:req.body.comment
     
               }
